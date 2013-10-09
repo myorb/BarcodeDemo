@@ -1,52 +1,106 @@
+
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Barcode Scanner Demo</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>Alex Cool app beta)</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="phonegap.js"></script>
+  <script type="text/javascript" src="barcodescanner.js"></script>
+  <script type="text/javascript" src="childbrowser.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  
+  <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="codiqa.ext.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.mobile-1.3.1.min.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <script src="js/codiqa.ext.js"></script>
+  
+  <script type="text/javascript">
+  app.initialize();
+  </script>    
+  
+</head>
+<body>
+<!-- Home -->
+<div data-role="page" id="page1">
+    <div data-theme="a" data-role="header" data-position="fixed">
+        <a id="menu" data-role="button" data-theme="c" href="#page1" data-icon="gear"
+        data-iconpos="left" class="ui-btn-right">
+            Войти
+        </a>
+        <a id="game" data-role="button" data-theme="b" href="#page1" data-icon="star"
+        data-iconpos="left" class="ui-btn-left">
+            Рулетка
+        </a>
+        <h3 id="paige-header-title">
+            Меню
+        </h3>
+    </div>
+    <div data-role="content">
+        <div style="width: 288px; height: 250px; position: relative; ">
+              <div class="app">
+              <h1>Apache Cordova</h1>
+                <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
-            </div>
-            <p><a href="#" class="topcoat-button" id="scan">SCAN</a></p>
-            <p><a href="#" class="topcoat-button" id="encode">ENCODE</a></p>
-            <p id="info"></p>
-            <h2>OPENING LINKS:</h2>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_blank', 'location=yes');">InAppBrowser</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_system', 'location=yes');">System Browser</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.yahoo.com', '_self', 'location=yes');">This Webview</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.plugins.childBrowser.showWebPage('http://www.nhl.com', {});">ChildBrowser</a></p>
+                </div>
+              </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="barcodescanner.js"></script>
-        <script type="text/javascript" src="childbrowser.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+        <ul data-role="listview" data-divider-theme="b" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Выбрать бар
+            </li>
+            <li data-theme="c">
+                <a href="#" class="topcoat-button" id="scan">
+                    Сфоткать QR code
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#" class="topcoat-button" id="encode">
+                    ENCODE
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Выбрать из списка
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Поиск на карте
+                </a>
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Поиск по названию
+                </a>
+            </li>
+            <li data-role="list-divider" role="heading">
+                Настройки
+            </li>
+            <li data-theme="c">
+                <a href="#page1" data-transition="slide">
+                    Сменить Фотку
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-theme="a" data-role="footer">
+        <h3>
+            Footer
+        </h3>
+    </div>
+</div>
+</body>
 </html>
